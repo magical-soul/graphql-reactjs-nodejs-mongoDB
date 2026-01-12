@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "StackFlow",
+  "name": "A production-ready full-stack web application built with React, Node.js, and GraphQL, focused on scalable architecture and efficient data flow.",
   "icons": [
     {
       "src": "favicon.ico",
