@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const graphqlHttp = require("express-graphql");
@@ -34,10 +35,10 @@ app.use(
   })
 );
 
+const mongoURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.x54zf54.mongodb.net/${process.env.MONGO_DB}?appName=Cluster0`;
+
 mongoose
-  .connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.x54zf54.mongodb.net/${process.env.MONGO_DB}?appName=Cluster0`
-  )
+  .connect(mongoURI)
   .then(() => {
     app.listen(8000);
   })

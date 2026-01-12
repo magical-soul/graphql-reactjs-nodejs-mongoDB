@@ -2,6 +2,7 @@ import { useState, useRef, useContext } from "react";
 
 import "./Auth.css";
 import AuthContext from "../context/auth-context";
+import API_URL from "../helpers/react-app-url";
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -56,7 +57,7 @@ function AuthPage() {
       };
     }
 
-    fetch("http://localhost:8000/graphql", {
+    fetch(API_URL, {
       method: "POST",
       body: JSON.stringify(requestBody),
       headers: {

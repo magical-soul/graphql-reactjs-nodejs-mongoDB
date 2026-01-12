@@ -5,6 +5,7 @@ import AuthContext from "../context/auth-context";
 import BookingList from "../components/Bookings/BookingList/BookingList";
 import BookingsChart from "../components/Bookings/BookingsChart/BookingsChart";
 import BookingsControls from "../components/Bookings/BookingsControls/BookingsControls";
+import API_URL from "../helpers/react-app-url";
 
 function BookingsPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +42,7 @@ function BookingsPage() {
     };
 
     try {
-      const res = await fetch("http://localhost:8000/graphql", {
+      const res = await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: {
@@ -79,7 +80,7 @@ function BookingsPage() {
     };
 
     try {
-      const res = await fetch("http://localhost:8000/graphql", {
+      const res = await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: {

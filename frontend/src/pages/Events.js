@@ -6,6 +6,7 @@ import EventList from "../components/Events/EventList/EventList";
 import Spinner from "../components/Spinner/Spinner";
 import AuthContext from "../context/auth-context";
 import "./Events.css";
+import API_URL from "../helpers/react-app-url";
 
 function EventsPage() {
   const [creating, setCreating] = useState(false);
@@ -76,7 +77,7 @@ function EventsPage() {
     const token = authContext.token;
 
     try {
-      const res = await fetch("http://localhost:8000/graphql", {
+      const res = await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: {
@@ -126,7 +127,7 @@ function EventsPage() {
     };
 
     try {
-      const res = await fetch("http://localhost:8000/graphql", {
+      const res = await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: {
@@ -173,7 +174,7 @@ function EventsPage() {
     };
 
     try {
-      const res = await fetch("http://localhost:8000/graphql", {
+      const res = await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: {
@@ -184,8 +185,7 @@ function EventsPage() {
       if (res.status !== 200 && res.status !== 201) {
         throw new Error("Failed!");
       }
-      const resData = await res.json();
-      console.log(resData);
+      await res.json();
       setSelectedEvent(null);
     } catch (err) {
       console.log(err);
