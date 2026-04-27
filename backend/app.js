@@ -35,7 +35,7 @@ app.use(
   })
 );
 
-const mongoURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.x54zf54.mongodb.net/${process.env.MONGO_DB}?appName=Cluster0`;
+const mongoURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@bookingapicluster0.jhubqac.mongodb.net/${process.env.MONGO_DB}?appName=BookingAPICluster0`;
 
 mongoose
   .connect(mongoURI)
